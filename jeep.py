@@ -39,11 +39,11 @@ with open("eep_speakers.txt", "w", "utf-8") as myfile:
             pattern2 = r"<h4>(.* .* .*) </h4>"
             mm2 = re.search(pattern2, str(eep_id), re.I)
             date = mm2.group(1)
-            #write name + ", " + date to the file
-            myfile.write(name)
-            myfile.write(", ")
-            myfile.write(date) 
-            myfile.write("\n")
         else: 
             break
+        #write name + ", " + date to the file
+        myfile.write(name)
+        myfile.write(", ")
+        myfile.write(date) 
+        myfile.write('\n')
 print "Done"
