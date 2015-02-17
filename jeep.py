@@ -6,7 +6,16 @@ from bs4 import BeautifulSoup
 
 import re 
 
-with open("hello.txt", "a") as myfile:
+#these might be important packages
+import os  
+import pdb
+from codecs import open
+
+with open("eep_speakers.txt", "w", "utf-8") as myfile:
+    myfile.write("Name")
+    myfile.write(", ")
+    myfile.write("Date")
+    myfile.write('\n')
     for i in range(1,800): #Iterate for all 800 pages
         #turn i into a filename that open() can read
         file = str(i) + ".html"
@@ -31,6 +40,10 @@ with open("hello.txt", "a") as myfile:
             mm2 = re.search(pattern2, str(eep_id), re.I)
             date = mm2.group(1)
             #write name + ", " + date to the file
-            myfile.write(str(name + ", " + date + "\n"))
+            myfile.write(name)
+            myfile.write(", ")
+            myfile.write(date) 
+            myfile.write("\n")
         else: 
             break
+print "Done"
